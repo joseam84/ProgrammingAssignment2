@@ -1,18 +1,19 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## makeCacheMatrix works as an object to store a matrix and its calculated inverted 
-## matrix.
-## cacheSolve accept a cached matrix object and compute and cache the inverted 
-## matrix into the object and return the computed result.
-
+## makeCacheMatrix works as an object to store a matrix and its 
+## calculated inverted matrix.
+## cacheSolve accept a cached matrix object and compute and cache 
+## the inverted matrix into the object and return the computed result.
 
 
 ## Write a short comment describing this function
+
 ## function: makeCacheMatrix accept a matrix and store its inverse matrix.
 ##    $get : return the same matrix
-##    $set : set the matrix and reset the inverted matrix to null
-##    $getInvMatrix: get the calculated inverted matrix if cached, else return NULL.
+##    $set : set the matrix and reset the inverted matrix to NULL
+##    $getInvMatrix: get the calculated inverted matrix if cached, else 
+##                   return NULL.
 ##    $setInvMatrix: set the calculated inverted matrix.
 ## param: x is a matrix, default to an [1,1] empty matrix
 # l
@@ -36,14 +37,14 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 ## 
-## function: cacheSolve accept the special cached matrix object and compute the 
-##            inverted matrix and cache the result. if the inverted matrix has 
-##            being calculated already return it from the cache.Else calculates 
-##            the inverted matrix using solve function, caches the result and 
-##            return  the result.
+## function: cacheSolve accept the special cached matrix object and compute the
+##            inverted matrix and cache the result. if the inverted matrix has
+##            being calculated already, return it from the cache, else 
+##            calculates the inverted matrix using the solve function, caches 
+##            the result and return  the result.
 ##  
 cacheSolve <- function(x, ...) {
-    #if the inverted matrix has being calculated already return it from the cache.
+    #if the inverted matrix has being calculated already, return it from the cache.
     im <- x$getInvMatrix()
     if(!is.null(im)) {
         message("getting cached data")
